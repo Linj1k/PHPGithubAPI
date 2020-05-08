@@ -1,6 +1,7 @@
+# PHPGithubAPI
 PHP library for github api(https://developer.github.com/, https://api.github.com/)
 
-- Exemple
+## Exemple
 ```php
 <?php
   require_once(__DIR__.'github.php');
@@ -14,20 +15,20 @@ PHP library for github api(https://developer.github.com/, https://api.github.com
 ?>
 ```
 
-# Available functions 
+## Available functions 
 ```php
 String | $githubAPI->getUserAgent()
 String | $githubAPI->getToken() //Private function
 ```
 
-# -RateLimit // https://api.github.com/rate_limit
+## -RateLimit // https://api.github.com/rate_limit
 ```php 
 Boolean | $githubAPI->isLimit($type) // core/search/graphql/integration_manifest
 String | $githubAPI->getLimit_Remaining($type) // core/search/graphql/integration_manifest
 Object/Variable | $githubAPI->getRateLimit("core/search/graphql/integration_manifest/limit/remaining/reset) // Exemple : $githubAPI->getRateLimit('core/limit');
 ```
 
-# -Releases // https://api.github.com/repos/:owner/:repo/releases
+## -Releases // https://api.github.com/repos/:owner/:repo/releases
 ```php 
 Object | $githubAPI->getListReleases($owner, $repo) // https://api.github.com/repos/:owner/:repo/releases
 Object | $githubAPI->getReleaseByID($owner, $repo, $release_id) // https://api.github.com/repos/:owner/:repo/releases/:release_id
@@ -37,14 +38,14 @@ Object | $githubAPI->getAsset($owner, $repo, $asset_id) // https://api.github.co
 Object | $githubAPI->getLatestRelease($owner, $repo) // https://api.github.com/repos/:owner/:repo/releases/latest
 ```
 
-# -Downloads // https://api.github.com/repos/:owner/:repo/downloads
+## -Downloads // https://api.github.com/repos/:owner/:repo/downloads
 ```php 
 Object | $githubAPI->getListDownloads($owner, $repo) // https://api.github.com/repos/:owner/:repo/downloads
 Object | $githubAPI->getDownload($owner, $repo, $download_id) // https://api.github.com/repos/:owner/:repo/downloads/:download_id
 Nothing | $githubAPI->deleteDownload($owner, $repo, $download_id) // https://api.github.com/repos/:owner/:repo/downloads/:download_id
 ```
 
-# -Comments // https://api.github.com/repos/:owner/:repo/comments
+## -Comments // https://api.github.com/repos/:owner/:repo/comments
 ```php 
 Object | $githubAPI->getListComments($owner, $repo) // https://api.github.com/repos/:owner/:repo/comments
 Object | $githubAPI->getListCommentsForSingleCommit($owner, $repo, $commit_sha) // https://api.github.com/repos/:owner/:repo/commits/:commit_sha/comments
