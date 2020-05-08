@@ -1,7 +1,17 @@
 {
     "name": "linj1k/phpgithubapi",
+    "type": "library",
+    "homepage": "https://github.com/Linj1k/PHPGithubAPI",
     "description": "PHP library for github api",
+    "license": "MIT",
+    "keywords": ["github", "api", "library"],
+    "authors": [
+        {
+            "name": "Linj1k",
+            "homepage": "https://github.com/Linj1k"
+        }
+    ],
     "require": {
-        "php": "^7.2"
+        "php": "^7.1"
     }
 }
