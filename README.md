@@ -6,7 +6,6 @@ Information : You need to activate curl
 ## Exemple
 ```php
 <?php
-  require_once(__DIR__.'/github.php'); //Vanilla
   require_once(__DIR__.'/vendor/autoload.php'); //Composer
   $github = new Github\Github("Username", "Personal access tokens");
   
