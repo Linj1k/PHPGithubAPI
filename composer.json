@@ -1,5 +1,5 @@
 {
-    "name": "Linj1k/PHPGithubAPI",
+    "name": "linj1k/phpgithubapi",
     "description": "PHP library for github api",
     "require": {
         "php": "^7.2"
