@@ -1,5 +1,15 @@
 PHP library for github api(https://developer.github.com/, https://api.github.com/)
 
+- Exemple
+```php
+  $github = new Github("Username", "Personal access tokens");
+  $release = $github->getLatestRelease("Linj1k", "PHPGithubAPI");
+  if(isset($release)){
+    $downloadLink = $release->assets[0]->browser_download_url;
+    $downloadAmount = $release->assets[0]->download_count;
+  }
+```
+
 # Available functions 
 ```php
 String | $githubAPI->getUserAgent()
