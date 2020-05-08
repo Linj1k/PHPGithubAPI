@@ -1,8 +1,6 @@
-# PHPGithubAPI
 PHP library for github api(https://developer.github.com/, https://api.github.com/)
 
-Available functions :
-
+# Available functions 
 String | $githubAPI->getUserAgent()
 String | $githubAPI->getToken() //Private function
 
