@@ -27,7 +27,7 @@ String | $githubAPI->getToken() //Private function
 ```php 
 Boolean | $githubAPI->isLimit($type) // core/search/graphql/integration_manifest
 String | $githubAPI->getLimit_Remaining($type) // core/search/graphql/integration_manifest
-Object/Variable | $githubAPI->getRateLimit("core/search/graphql/integration_manifest/limit/remaining/reset) // Exemple : $githubAPI->getRateLimit('core/limit');
+Object/Variable | $githubAPI->getRateLimit("core/search/graphql/integration_manifest"/"limit/remaining/reset") // Exemple : $githubAPI->getRateLimit('core/limit');
 ```
 
 ## -Releases // https://api.github.com/repos/:owner/:repo/releases
