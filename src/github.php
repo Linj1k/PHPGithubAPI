@@ -133,31 +133,59 @@
         }
         
         // Rate Limit
-        function isLimit(){ // https://api.github.com/rate_limit
+        function isLimit($limit=""){ // https://api.github.com/rate_limit
             $data = $this->get("rate_limit");
             if($data == false){
                 return false;
+            }
+
+            if(isset($limit) && !empty($limit)){
+                if($limit == "core"){
+                    return $data->resources->core->limit == abs($data->resources->core->limit-$data->resources->core->remaining);
+                }
+                
+                if($limit == "search"){
+                    return $data->resources->search->limit == abs($data->resources->search->limit-$data->resources->search->remaining);
+                }
+
+                if($limit == "graphql"){
+                    return $data->resources->graphql->limit == abs($data->resources->graphql->limit-$data->resources->graphql->remaining);
+                }
             }
 
             return $data->resources->core->limit == abs($data->resources->core->limit-$data->resources->core->remaining);
         }
 
-        function Limit_Remaining(){ // https://api.github.com/rate_limit
+        function getLimit_Remaining($limit=""){ // https://api.github.com/rate_limit
             $data = $this->get("rate_limit");
             if($data == false){
                 return false;
             }
 
+            if(isset($limit) && !empty($limit)){
+                if($limit == "core"){
+                    return abs($data->resources->core->limit-$data->resources->core->remaining)."/".$data->resources->core->limit;
+                }
+                
+                if($limit == "search"){
+                    return abs($data->resources->search->limit-$data->resources->search->remaining)."/".$data->resources->search->limit;
+                }
+
+                if($limit == "graphql"){
+                    return abs($data->resources->graphql->limit-$data->resources->graphql->remaining)."/".$data->resources->graphql->limit;
+                }
+            }
+
             return abs($data->resources->core->limit-$data->resources->core->remaining)."/".$data->resources->core->limit;
         }
 
-        function getLimit($limit){ // https://api.github.com/rate_limit
+        function getLimit($limit=""){ // https://api.github.com/rate_limit
             $data = $this->get("rate_limit");
             if($data === false){
                 return false;
             }
 
-            if(isset($limit)){
+            if(isset($limit) && !empty($limit)){
                 if($limit == "core/limit"){
                     return $data->resources->core->limit;
                 }
