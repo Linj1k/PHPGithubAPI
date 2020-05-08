@@ -4,7 +4,7 @@ PHP library for github api(https://developer.github.com/, https://api.github.com
 ## Exemple
 ```php
 <?php
-  require_once(__DIR__.'github.php');
+  require_once(__DIR__.'/github.php');
   $github = new Github("Username", "Personal access tokens");
   
   $release = $github->getLatestRelease("Linj1k", "PHPGithubAPI");
