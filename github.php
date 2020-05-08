@@ -1,4 +1,5 @@
 <?php
+    namespace linj1k\phpgithubapi\Github;
     class Github {
         private $token;
         public $apiurl = "https://api.github.com/";
